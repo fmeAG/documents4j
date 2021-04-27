@@ -10,6 +10,9 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
     public static final DocumentType RTF = new DocumentType(Value.APPLICATION, Value.RTF);
     public static final DocumentType DOCX = new DocumentType(Value.APPLICATION, Value.DOCX);
     public static final DocumentType DOC = new DocumentType(Value.APPLICATION, Value.DOC);
+    public static final DocumentType DOTX = new DocumentType(Value.APPLICATION, Value.DOTX);
+    public static final DocumentType OTT = new DocumentType(Value.APPLICATION, Value.OTT);
+
     public static final DocumentType MS_EXCEL = new DocumentType(Value.APPLICATION, Value.EXCEL_ANY);
     public static final DocumentType XLSX = new DocumentType(Value.APPLICATION, Value.XLSX);
     public static final DocumentType XLTX = new DocumentType(Value.APPLICATION, Value.XLTX);
@@ -102,6 +105,9 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
         public static final String DOC = "msword";
         public static final String DOCX = "vnd.openxmlformats-officedocument.wordprocessingml.document";
+        public static final String DOTX = "application/vnd.openxmlformats-officedocument.wordprocessingml.template";
+
+        public static final String OTT = "vnd.oasis.opendocument.text-template";
         public static final String WORD_ANY = "vnd.com.documents4j.any-msword";
 
         public static final String XLS = "vnd.ms-excel";
