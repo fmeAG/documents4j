@@ -35,14 +35,19 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
     On Error Resume Next
 
     ' https://docs.microsoft.com/en-us/office/vba/api/powerpoint.presentations.open
-    ' 1st argument - filename'
+    ' 1st argument - filename together with password - see https://www.mrexcel.com/board/threads/excel-vba-to-open-a-password-protected-power-point-presentation.1015613/
     ' 2nd argument - ReadOnly'
     ' 3rd argument - Untitled'
     ' 4rd argument - WithWindow'
-    Set powerpointPresentation = powerpointApplication.Presentations.Open(inputFile, , , FALSE)
+    Set powerpointPresentation = powerpointApplication.Presentations.Open(inputFile + "::#!#+?ß12345+!.-2vbsfgdVDFAS::", , , FALSE)
 
     If Err <> 0 Then
-    ''  WScript.Echo Err
+      ' MsgBox Err
+      ' MsgBox Err.Description
+      if Err = -2147467259 AND InStr(1, Err.Description, "Presentations.Open : Reenter the &password") = 1 Then
+              WScript.Quit -10
+      End If
+
       WScript.Quit -2
     End If
     On Error GoTo 0

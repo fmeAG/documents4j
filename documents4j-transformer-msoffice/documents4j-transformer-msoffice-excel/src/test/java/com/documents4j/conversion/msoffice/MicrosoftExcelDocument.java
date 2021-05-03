@@ -11,10 +11,12 @@ public enum MicrosoftExcelDocument implements Document {
     XLS_VALID("/valid.xls"),
     XLS_CORRUPT("/corrupt.xls"),
     XLS_INEXISTENT("/inexistent.xls"),
+    XLS_PASSWORD("/password.xls"),
 
     XLSX_VALID("/valid.xlsx"),
     XLSX_CORRUPT("/corrupt.xlsx"),
     XLSX_INEXISTENT("/inexistent.xlsx"),
+    XLSX_PASSWORD("/password.xlsx"),
 
     ODS_VALID("/valid.ods"),
     ODS_CORRUPT("/corrupt.ods"),

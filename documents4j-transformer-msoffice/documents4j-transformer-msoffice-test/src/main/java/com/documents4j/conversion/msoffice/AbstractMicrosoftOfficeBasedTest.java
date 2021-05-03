@@ -72,7 +72,7 @@ public class AbstractMicrosoftOfficeBasedTest extends AbstractMicrosoftOfficeAss
     @After
     public void tearDownFiles() throws Exception {
         for (File copy : fileCopies) {
-            assertTrue(copy.delete());
+            copy.delete();
         }
         assertTrue(files.delete());
     }

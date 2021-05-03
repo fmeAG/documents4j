@@ -20,6 +20,10 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
   End If
   On Error GoTo 0
 
+  'excelApplication.DisplayAlerts = False
+  'excelApplication.EnableEvents = False
+  'excelApplication.ScreenUpdating = False
+
   ' Find the source file on the file system.
   Set fileSystemObject = CreateObject("Scripting.FileSystemObject")
   inputFile = fileSystemObject.GetAbsolutePathName(inputFile)
@@ -29,8 +33,25 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
 
     ' Attempt to open the source document.
     On Error Resume Next
-    Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True)
+
+    ' https://docs.microsoft.com/en-us/office/vba/api/excel.workbooks.open
+    ' filename, UpdateLinks, ReadOnly, Format, Password, WriteResPassword, IgnoreReadOnlyRecommended, Origin, Delimiter, Editable, Notify, Converter, AddToMru,Local, CorruptLoad'
+    Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , True, , , , , , , , 1)
+
     If Err <> 0 Then
+        ' visualize the error number
+        'MsgBox Err
+        'MsgBox Err.Description
+
+        ' document is corrupt because repairing does not work
+        If Err = 1004 AND InStr(1, Err.Description, "The file is corrupt and cannot be opened") = 1 Then
+           WScript.Quit -2
+        End If
+
+         ' Wrong password detected (1004 for password for xls files with the specific description)
+        If Err = 1004 AND InStr(1, Err.Description, "The password you supplied is not correct") = 1 Then
+            WScript.Quit -10
+        End If
       WScript.Quit -2
     End If
     On Error GoTo 0

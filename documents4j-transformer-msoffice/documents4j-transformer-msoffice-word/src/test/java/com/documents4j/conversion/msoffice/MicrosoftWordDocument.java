@@ -12,6 +12,9 @@ public enum MicrosoftWordDocument implements Document {
     DOC_CORRUPT("/corrupt.doc"),
     DOC_INEXISTENT("/inexistent.doc"),
 
+    DOC_PASSWORD("/password.doc"),
+    OTT_PASSWORD("/password.ott"),
+
     DOCX_VALID("/valid.docx"),
     DOCX_CORRUPT("/corrupt.docx"),
     DOCX_INEXISTENT("/inexistent.docx"),

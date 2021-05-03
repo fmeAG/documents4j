@@ -104,6 +104,27 @@ public abstract class Reaction {
         }
     }
 
+    public static class ConverterPasswordExceptionBuilder implements IExceptionBuilder {
+
+        private final String message;
+
+        public ConverterPasswordExceptionBuilder(String message) {
+            this.message = message;
+        }
+
+        @Override
+        public RuntimeException make() {
+            return new ConverterPasswordException(message);
+        }
+
+        @Override
+        public String toString() {
+            return MoreObjects.toStringHelper(ConverterPasswordExceptionBuilder.class)
+                    .add("message", message)
+                    .toString();
+        }
+    }
+
     public static class ConverterAccessExceptionBuilder implements IExceptionBuilder {
 
         private final String message;

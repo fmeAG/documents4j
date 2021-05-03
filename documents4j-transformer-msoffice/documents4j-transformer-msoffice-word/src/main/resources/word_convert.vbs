@@ -34,10 +34,26 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
     On Error Resume Next
 
     ' Open: See https://msdn.microsoft.com/en-us/library/office/ff835182.aspx
-    Set wordDocument = wordApplication.Documents.Open(inputFile, False, True, False)
+    ' PasswordDocument	Optional	Variant	The password for opening the document.
+    ' PasswordTemplate	Optional	Variant	The password for opening the template.
+    ' Revert	Optional	Variant	Controls what happens if FileName is the name of an open document. True to discard any unsaved changes to the open document and reopen the file. False to activate the open document.
+    ' WritePasswordDocument	Optional	Variant	The password for saving changes to the document.
+    ' WritePasswordTemplate	Optional	Variant	The password for saving changes to the template.
+    ' Format	Optional	Variant	The file converter to be used to open the document. Can be one of the WdOpenFormat constants. The default value is wdOpenFormatAuto. To specify an external file format, apply the OpenFormat property to a FileConverter object to determine the value to use with this argument.
+    ' Encoding	Optional	Variant	The document encoding (code page or character set) to be used by Microsoft Word when you view the saved document. Can be any valid MsoEncoding constant. For the list of valid MsoEncoding constants, see the Object Browser in the Visual Basic Editor. The default value is the system code page.
+    ' Visible	Optional	Variant	True if the document is opened in a visible window. The default value is True.
+    ' OpenConflictDocument	Optional	Variant	Specifies whether to open the conflict file for a document with an offline conflict.
+    ' OpenAndRepair	Optional	Variant	True to repair the document to prevent document corruption.
+    ' DocumentDirection	Optional	WdDocumentDirection	Indicates the horizontal flow of text in a document. The default value is wdLeftToRight.
+    ' NoEncodingDialog	Optional	Variant	True to skip displaying the Encoding dialog box that Word displays if the text encoding cannot be recognized. The default value is False.'
+    Set wordDocument = wordApplication.Documents.Open(inputFile, False, True, False,"#!#+?ß12345+!.-2vbsfgdVDFAS", "#!#+?ß12345+!.-2vbsfgdVDFAS")
 
     ' If the document cannot be opened due to it, its handle is empty.
     If wordDocument = "" OR Err <> 0 Then
+        ' Wrong password detected (5408 for password for doc files, 5121 password for ott files)
+        If Err = 5408 OR Err = 5121 Then
+            WScript.Quit -10
+        End If
       WScript.Quit -2
     End If
     On Error GoTo 0

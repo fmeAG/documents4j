@@ -46,6 +46,11 @@ public enum ExternalConverterScriptResult {
     CONVERTER_INACCESSIBLE(-6, Reaction.with(new Reaction.ConverterAccessExceptionBuilder("The converter seems to be shut down"))),
 
     /**
+     * Represents an interaction with a converter where the document could not be converted
+     */
+    PASSWORD_PROTECTED(-10, Reaction.with(new Reaction.ConverterPasswordExceptionBuilder("The input file is password protected"))),
+
+    /**
      * Represents an interaction with a converter which cannot be explained.
      */
     UNKNOWN(null, Reaction.with(false));
