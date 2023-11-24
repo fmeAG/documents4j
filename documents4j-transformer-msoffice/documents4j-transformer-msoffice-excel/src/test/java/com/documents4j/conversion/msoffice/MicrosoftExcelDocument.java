@@ -16,6 +16,10 @@ public enum MicrosoftExcelDocument implements Document {
     XLSX_CORRUPT("/corrupt.xlsx"),
     XLSX_INEXISTENT("/inexistent.xlsx"),
 
+    XLSM_VALID("/valid.xlsm"),
+    XLSM_CORRUPT("/corrupt.xlsm"),
+    XLSM_INEXISTENT("/inexistent.xlsm"),
+
     ODS_VALID("/valid.ods"),
     ODS_CORRUPT("/corrupt.ods"),
     ODS_INEXISTENT("/inexistent.ods"),

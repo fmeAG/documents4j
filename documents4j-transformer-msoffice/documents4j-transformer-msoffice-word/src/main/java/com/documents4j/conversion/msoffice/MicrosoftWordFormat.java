@@ -10,6 +10,7 @@ enum MicrosoftWordFormat implements MicrosoftOfficeFormat {
     PDF("17", "pdf", DocumentType.PDF),
     PDFA("999", "pdf", DocumentType.PDFA),
     DOCX("16", "docx", DocumentType.DOCX),
+    DOTX("1", "dotx", DocumentType.DOTX),
     DOC("0", "doc", DocumentType.DOC),
     RTF("6", "rtf", DocumentType.RTF),
     MHTML("9", "mht", DocumentType.MHTML),

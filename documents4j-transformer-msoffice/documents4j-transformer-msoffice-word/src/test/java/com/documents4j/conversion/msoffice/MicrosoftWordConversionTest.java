@@ -32,6 +32,7 @@ public class MicrosoftWordConversionTest extends AbstractMicrosoftOfficeConversi
                 {DOCX_VALID, DOCX_CORRUPT, DOCX_INEXISTENT, DocumentType.MS_WORD, DocumentType.RTF, "rtf", true},
                 {DOCX_VALID, DOCX_CORRUPT, DOCX_INEXISTENT, DocumentType.MS_WORD, DocumentType.MHTML, "mhtml", true},
                 {DOCX_VALID, DOCX_CORRUPT, DOCX_INEXISTENT, DocumentType.MS_WORD, DocumentType.TEXT, "txt", true},
+                {DOTX_VALID, DOTX_CORRUPT, DOTX_INEXISTENT, DocumentType.DOTX, DocumentType.PDF, "pdf", false},
                 {RTF_VALID, RTF_CORRUPT, RTF_INEXISTENT, DocumentType.RTF, DocumentType.PDF, "pdf", true},
                 {XML_VALID, XML_CORRUPT, XML_INEXISTENT, DocumentType.XML, DocumentType.PDF, "pdf", true},
                 {DOC_VALID, DOC_CORRUPT, DOC_INEXISTENT, DocumentType.DOC, DocumentType.PDF, "pdf", false},

@@ -16,6 +16,10 @@ public enum MicrosoftWordDocument implements Document {
     DOCX_CORRUPT("/corrupt.docx"),
     DOCX_INEXISTENT("/inexistent.docx"),
 
+    DOTX_VALID("/valid.dotx"),
+    DOTX_CORRUPT("/corrupt.dotx"),
+    DOTX_INEXISTENT("/inexistent.dotx"),
+
     RTF_VALID("/valid.rtf"),
     RTF_CORRUPT("/corrupt.rtf"),
     RTF_INEXISTENT("/inexistent.rtf"),
