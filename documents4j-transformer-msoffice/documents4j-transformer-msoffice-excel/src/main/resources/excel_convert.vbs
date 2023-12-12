@@ -49,8 +49,8 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
 
     ' https://docs.microsoft.com/en-us/office/vba/api/excel.workbooks.open
     ' filename, UpdateLinks, ReadOnly, Format, Password, WriteResPassword, IgnoreReadOnlyRecommended, Origin, Delimiter, Editable, Notify, Converter, AddToMru,Local, CorruptLoad'
-    'Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , True, , , , , , , , 1)
-	Set excelDocument = excelApplication.Workbooks.Open(inputFile, 0, True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , False, , , , , , , , 0)
+    Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , True, , , , , , , , 1)
+	'Set excelDocument = excelApplication.Workbooks.Open(inputFile, 0, True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , False, , , , , , , , 0)
 	'Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True)
 
     If Err <> 0 Then
@@ -58,7 +58,6 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
         'MsgBox Err
         'MsgBox Err.Description
 
-		'myLogger.LogError(Err)
 		'myLogger.LogError(Err.Description)
 
         ' document is corrupt because repairing does not work
@@ -69,6 +68,10 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
          ' Wrong password detected (1004 for password for xls files with the specific description)
         If Err = 1004 AND InStr(1, Err.Description, "The password you supplied is not correct") = 1 Then
             WScript.Quit -10
+        End If
+
+        If Err = 1004 AND InStr(1, Err.Description, "Das eingegebene Kennwort ist") = 1 Then
+                    WScript.Quit -10
         End If
       WScript.Quit -2
     End If
