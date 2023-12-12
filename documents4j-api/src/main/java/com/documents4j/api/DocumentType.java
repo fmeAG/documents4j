@@ -107,8 +107,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
         public static final String DOC = "msword";
         public static final String DOCX = "vnd.openxmlformats-officedocument.wordprocessingml.document";
-
-        public static final String DOTX = "vnd.ms-word.template";
+        public static final String DOTX = "vnd.openxmlformats-officedocument.wordprocessingml.template";
         public static final String WORD_ANY = "vnd.com.documents4j.any-msword";
 
         public static final String XLS = "vnd.ms-excel";
@@ -133,7 +132,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
         public static final String PPT = "vnd.ms-powerpoint";
         public static final String PPTX = "vnd.openxmlformats-officedocument.presentationml.presentation";
-        public static final String PPSX = "vnd.openxmlformats-officedocument.presentationml.presentation";
+        public static final String PPSX = "vnd.openxmlformats-officedocument.presentationml.slideshow";
         public static final String POWERPOINT_ANY = "vnd.com.documents4j.any-mspowerpoint";
 
         private Value() {
