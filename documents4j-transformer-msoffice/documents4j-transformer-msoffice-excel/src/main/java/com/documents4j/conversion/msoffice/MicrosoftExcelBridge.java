@@ -17,6 +17,7 @@ import static com.documents4j.api.DocumentType.Value.*;
 @ViableConversion(
         from = {APPLICATION + "/" + XLS,
                 APPLICATION + "/" + XLSX,
+                APPLICATION + "/" + XLSM,
                 APPLICATION + "/" + EXCEL_ANY,
                 APPLICATION + "/" + ODS,
                 APPLICATION + "/" + OTS},
@@ -24,6 +25,7 @@ import static com.documents4j.api.DocumentType.Value.*;
                 APPLICATION + "/" + XLS,
                 APPLICATION + "/" + XLSX,
                 APPLICATION + "/" + XLTX,
+                APPLICATION + "/" + XLSM,
                 APPLICATION + "/" + ODS,
                 TEXT + "/" + CSV,
                 TEXT + "/" + PLAIN,

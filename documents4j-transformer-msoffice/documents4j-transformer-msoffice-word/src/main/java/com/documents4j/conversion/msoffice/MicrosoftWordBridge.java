@@ -15,6 +15,7 @@ import static com.documents4j.api.DocumentType.Value.*;
                 APPLICATION + "/" + PDFA,
                 APPLICATION + "/" + DOC,
                 APPLICATION + "/" + DOCX,
+                APPLICATION + "/" + DOTX,
                 APPLICATION + "/" + OTT,
                 APPLICATION + "/" + WORD_ANY,
                 APPLICATION + "/" + RTF,

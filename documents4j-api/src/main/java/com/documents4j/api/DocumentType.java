@@ -9,6 +9,8 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
     public static final DocumentType MS_WORD = new DocumentType(Value.APPLICATION, Value.WORD_ANY);
     public static final DocumentType RTF = new DocumentType(Value.APPLICATION, Value.RTF);
     public static final DocumentType DOCX = new DocumentType(Value.APPLICATION, Value.DOCX);
+
+    public static final DocumentType DOTX = new DocumentType(Value.APPLICATION, Value.DOTX);
     public static final DocumentType DOC = new DocumentType(Value.APPLICATION, Value.DOC);
     public static final DocumentType DOTX = new DocumentType(Value.APPLICATION, Value.DOTX);
     public static final DocumentType OTT = new DocumentType(Value.APPLICATION, Value.OTT);
@@ -16,6 +18,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
     public static final DocumentType MS_EXCEL = new DocumentType(Value.APPLICATION, Value.EXCEL_ANY);
     public static final DocumentType XLSX = new DocumentType(Value.APPLICATION, Value.XLSX);
     public static final DocumentType XLTX = new DocumentType(Value.APPLICATION, Value.XLTX);
+    public static final DocumentType XLSM = new DocumentType(Value.APPLICATION, Value.XLSM);
     public static final DocumentType XLS = new DocumentType(Value.APPLICATION, Value.XLS);
     public static final DocumentType ODS = new DocumentType(Value.APPLICATION, Value.ODS);
     public static final DocumentType OTS = new DocumentType(Value.APPLICATION, Value.OTS);
@@ -29,6 +32,8 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
     public static final DocumentType MS_POWERPOINT = new DocumentType(Value.APPLICATION, Value.POWERPOINT_ANY);
     public static final DocumentType PPTX = new DocumentType(Value.APPLICATION, Value.PPTX);
     public static final DocumentType PPT = new DocumentType(Value.APPLICATION, Value.PPT);
+    public static final DocumentType PPSX = new DocumentType(Value.APPLICATION, Value.PPSX);
+
 
 
     private final String type;
@@ -105,7 +110,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
         public static final String DOC = "msword";
         public static final String DOCX = "vnd.openxmlformats-officedocument.wordprocessingml.document";
-        public static final String DOTX = "application/vnd.openxmlformats-officedocument.wordprocessingml.template";
+        public static final String DOTX = "vnd.openxmlformats-officedocument.wordprocessingml.template";
 
         public static final String OTT = "vnd.oasis.opendocument.text-template";
         public static final String WORD_ANY = "vnd.com.documents4j.any-msword";
@@ -113,6 +118,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
         public static final String XLS = "vnd.ms-excel";
         public static final String XLSX = "vnd.openxmlformats-officedocument.spreadsheetml.sheet";
         public static final String XLTX = "vnd.openxmlformats-officedocument.spreadsheetml.template";
+        public static final String XLSM = "vnd.ms-excel.sheet.macroEnabled.12";
         public static final String EXCEL_ANY = "vnd.com.documents4j.any-msexcel";
         public static final String ODS = "vnd.oasis.opendocument.spreadsheet";
         public static final String OTS = "vnd.oasis.opendocument.spreadsheet-template";
@@ -131,6 +137,7 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
         public static final String PPT = "vnd.ms-powerpoint";
         public static final String PPTX = "vnd.openxmlformats-officedocument.presentationml.presentation";
+        public static final String PPSX = "vnd.openxmlformats-officedocument.presentationml.slideshow";
         public static final String POWERPOINT_ANY = "vnd.com.documents4j.any-mspowerpoint";
 
         private Value() {

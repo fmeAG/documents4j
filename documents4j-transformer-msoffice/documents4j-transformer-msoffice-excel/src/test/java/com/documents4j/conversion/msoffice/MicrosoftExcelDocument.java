@@ -18,6 +18,10 @@ public enum MicrosoftExcelDocument implements Document {
     XLSX_INEXISTENT("/inexistent.xlsx"),
     XLSX_PASSWORD("/password.xlsx"),
 
+    XLSM_VALID("/valid.xlsm"),
+    XLSM_CORRUPT("/corrupt.xlsm"),
+    XLSM_INEXISTENT("/inexistent.xlsm"),
+
     ODS_VALID("/valid.ods"),
     ODS_CORRUPT("/corrupt.ods"),
     ODS_INEXISTENT("/inexistent.ods"),
