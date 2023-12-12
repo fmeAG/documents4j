@@ -12,7 +12,6 @@ public class DocumentType implements Serializable, Comparable<DocumentType> {
 
     public static final DocumentType DOTX = new DocumentType(Value.APPLICATION, Value.DOTX);
     public static final DocumentType DOC = new DocumentType(Value.APPLICATION, Value.DOC);
-    public static final DocumentType DOTX = new DocumentType(Value.APPLICATION, Value.DOTX);
     public static final DocumentType OTT = new DocumentType(Value.APPLICATION, Value.OTT);
 
     public static final DocumentType MS_EXCEL = new DocumentType(Value.APPLICATION, Value.EXCEL_ANY);
