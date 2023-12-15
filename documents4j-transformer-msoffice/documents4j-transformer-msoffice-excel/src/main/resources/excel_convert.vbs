@@ -53,7 +53,7 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
 
     ' https://docs.microsoft.com/en-us/office/vba/api/excel.workbooks.open
     ' filename, UpdateLinks, ReadOnly, Format, Password, WriteResPassword, IgnoreReadOnlyRecommended, Origin, Delimiter, Editable, Notify, Converter, AddToMru,Local, CorruptLoad'
-    Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , True, , , , , , , , 1)
+    Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , True, , , , , , , , 0)
 	'Set excelDocument = excelApplication.Workbooks.Open(inputFile, 0, True, , "#!#+?ß12345+!.-2vbsfgdVDFAS", , False, , , , , , , , 0)
 	'Set excelDocument = excelApplication.Workbooks.Open(inputFile, , True)
 
