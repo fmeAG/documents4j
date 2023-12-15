@@ -26,7 +26,11 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
 
   ' Get the running instance of MS Excel. If Excel is not running, exit the conversion.
   On Error Resume Next
+
   Set excelApplication = GetObject(, "Excel.Application")
+  ' set automation security to 3 means to disable macros completely - see https://learn.microsoft.com/en-us/office/vba/api/excel.application.automationsecurity
+  excelApplication.AutomationSecurity = 3
+
   If Err <> 0 Then
     WScript.Quit -6
   End If
@@ -71,7 +75,7 @@ Function ConvertFile( inputFile, outputFile, formatEnumeration )
         End If
 
         If Err = 1004 AND InStr(1, Err.Description, "Das eingegebene Kennwort ist") = 1 Then
-                    WScript.Quit -10
+            WScript.Quit -10
         End If
       WScript.Quit -2
     End If
